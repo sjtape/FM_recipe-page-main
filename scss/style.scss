@@ -1,5 +1,7 @@
 @use "universal" as u;
+
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Young+Serif&display=swap");
+
 
 :root {
     --White: hsl(0, 0%, 100%);
@@ -40,8 +42,8 @@ li::marker {
 .ingredients,
 .instructions,
 .nutrition {
-    border-bottom: 2px solid var(--Stone150);
-    padding-bottom: 2rem;
+    border-block-end: 2px solid var(--Stone150);
+    padding-block-end: 2rem;
 }
 
 //--CARD--//
@@ -57,7 +59,7 @@ li::marker {
     h2 {
         color: var(--Brown800);
         font-size: 1.7rem;
-        margin-bottom: 1rem;
+        margin-block-end: 1rem;
     }
 
     li {
@@ -69,7 +71,7 @@ li::marker {
 //*--header--//
 .hero {
     img {
-        margin-bottom: 2rem;
+        margin-block-end: 2rem;
     }
     h1 {
         font-size: 2.3rem;
@@ -79,7 +81,6 @@ li::marker {
     h1,
     p {
         padding: 0 2rem 2rem;
-        //   margin-bottom: 2rem;
     }
 }
 
@@ -90,9 +91,12 @@ li::marker {
     padding: 1.5rem;
     margin-inline: 2rem;
 
-    h3 {
+    h2 {
+        font-family: "Outfit", sans-serif;
+        font-weight: 700;
         color: var(--Rose800);
-        margin-bottom: 1rem;
+        margin-block-end: 1rem;
+        font-size: 1.2rem;
     }
 
     li::marker {
@@ -100,15 +104,12 @@ li::marker {
     }
 }
 
-//--ingredients--//
-.ingredients {
-}
 
 //nutrition
 .nutrition {
-    border-bottom: 0;
+    border-block-end: 0;
     p {
-        margin-bottom: 1rem;
+        margin-block-end: 1rem;
     }
 }
 //TABLE//
@@ -121,7 +122,14 @@ li::marker {
     }
 
     tr:not(:last-child) {
-        border-bottom: 2px solid var(--Stone150);
+        border-block-end: 2px solid var(--Stone150);
+    }
+    th {
+        font-weight: 400;
+    }
+    td {
+        color: var(--Brown800);
+        font-weight: 600;
     }
 }
 
@@ -137,11 +145,12 @@ li::marker {
             img {
                 border-radius: 1rem;
             }
-            h1,p{
-              padding: 0;
+            h1,
+            p {
+                padding: 0;
             }
-            h1{
-              margin-bottom: 2rem;
+            h1 {
+                margin-block-end:  2rem;
             }
         }
     }
