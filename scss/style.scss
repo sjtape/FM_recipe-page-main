@@ -1,0 +1,148 @@
+@use "universal" as u;
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Young+Serif&display=swap");
+
+:root {
+    --White: hsl(0, 0%, 100%);
+    --Stone100: hsl(30, 54%, 90%);
+    --Stone150: hsl(30, 18%, 87%);
+    --Stone600: hsl(30, 10%, 34%);
+    --Stone900: hsl(24, 5%, 18%);
+    --Brown800: hsl(14, 45%, 36%);
+    --Rose800: hsl(332, 51%, 32%);
+    --Rose50: hsl(330, 100%, 98%);
+}
+
+html {
+    font-family: "Outfit", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+body {
+    background: var(--Stone100);
+    color: var(--Stone600);
+}
+
+h1,
+h2 {
+    font-family: "Young Serif", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+li::marker {
+    font-weight: 700;
+    color: var(--Brown800);
+}
+
+.container {
+    @include u.flex-center;
+}
+.ingredients,
+.instructions,
+.nutrition {
+    border-bottom: 2px solid var(--Stone150);
+    padding-bottom: 2rem;
+}
+
+//--CARD--//
+.card {
+    width: clamp(375px, 90vw, 700px);
+    background-color: var(--White);
+    border-radius: 1rem;
+
+    section {
+        padding: 2rem;
+    }
+
+    h2 {
+        color: var(--Brown800);
+        font-size: 1.7rem;
+        margin-bottom: 1rem;
+    }
+
+    li {
+        margin: 0 1.2rem;
+        padding: 0.5rem 1rem;
+    }
+}
+
+//*--header--//
+.hero {
+    img {
+        margin-bottom: 2rem;
+    }
+    h1 {
+        font-size: 2.3rem;
+        color: var(--Stone900);
+        line-height: 1em;
+    }
+    h1,
+    p {
+        padding: 0 2rem 2rem;
+        //   margin-bottom: 2rem;
+    }
+}
+
+//--PREPARATION--//
+.preparation {
+    background-color: var(--Rose50);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    margin-inline: 2rem;
+
+    h3 {
+        color: var(--Rose800);
+        margin-bottom: 1rem;
+    }
+
+    li::marker {
+        color: var(--Rose800);
+    }
+}
+
+//--ingredients--//
+.ingredients {
+}
+
+//nutrition
+.nutrition {
+    border-bottom: 0;
+    p {
+        margin-bottom: 1rem;
+    }
+}
+//TABLE//
+.nutri-table {
+    width: 100%;
+    text-align: left;
+    border-collapse: collapse;
+    tr > * {
+        padding: 1rem;
+    }
+
+    tr:not(:last-child) {
+        border-bottom: 2px solid var(--Stone150);
+    }
+}
+
+//--MEDIA--//
+@include u.responsive(769px) {
+    .container {
+        min-height: 100vh;
+    }
+    .card {
+        border-radius: 2rem;
+        .hero {
+            padding: 2rem;
+            img {
+                border-radius: 1rem;
+            }
+            h1,p{
+              padding: 0;
+            }
+            h1{
+              margin-bottom: 2rem;
+            }
+        }
+    }
+}
